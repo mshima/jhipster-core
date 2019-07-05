@@ -710,7 +710,16 @@ describe('JDLImporter', () => {
           entities: ['A', 'B', 'E', 'F'],
           'generator-jhipster': {
             baseName: 'myFirstApp',
-            blueprints: ['vuejs', 'kotlin'],
+            blueprints: [
+              {
+                name: 'vuejs',
+                version: 'latest'
+              },
+              {
+                name: 'kotlin',
+                version: 'latest'
+              }
+            ],
             packageName: 'com.mycompany.myfirstapp',
             packageFolder: 'com/mycompany/myfirstapp',
             authenticationType: 'jwt',
