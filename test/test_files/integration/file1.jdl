@@ -5,6 +5,7 @@ application {
     packageName com.mycompany.myfirstapp
     clientTheme yeti
     clientThemeVariant primary
+    blueprints [vuejs, kotlin]
   }
   entities * except C, D
 }

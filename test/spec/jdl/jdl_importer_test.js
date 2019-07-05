@@ -540,6 +540,7 @@ describe('JDLImporter', () => {
           entities: [],
           'generator-jhipster': {
             baseName: 'tata',
+            blueprints: [],
             packageName: 'com.mathieu.tata',
             packageFolder: 'com/mathieu/tata',
             authenticationType: 'jwt',
@@ -575,6 +576,7 @@ describe('JDLImporter', () => {
           entities: [],
           'generator-jhipster': {
             baseName: 'titi',
+            blueprints: [],
             packageName: 'com.mathieu.titi',
             packageFolder: 'com/mathieu/titi',
             authenticationType: 'jwt',
@@ -610,6 +612,7 @@ describe('JDLImporter', () => {
           entities: [],
           'generator-jhipster': {
             baseName: 'toto',
+            blueprints: [],
             packageName: 'com.mathieu.toto',
             packageFolder: 'com/mathieu/toto',
             authenticationType: 'jwt',
@@ -640,6 +643,7 @@ describe('JDLImporter', () => {
           entities: [],
           'generator-jhipster': {
             baseName: 'tutu',
+            blueprints: [],
             packageName: 'com.mathieu.tutu',
             packageFolder: 'com/mathieu/tutu',
             authenticationType: 'jwt',
@@ -706,6 +710,7 @@ describe('JDLImporter', () => {
           entities: ['A', 'B', 'E', 'F'],
           'generator-jhipster': {
             baseName: 'myFirstApp',
+            blueprints: ['vuejs', 'kotlin'],
             packageName: 'com.mycompany.myfirstapp',
             packageFolder: 'com/mycompany/myfirstapp',
             authenticationType: 'jwt',
@@ -741,6 +746,7 @@ describe('JDLImporter', () => {
           entities: ['E'],
           'generator-jhipster': {
             baseName: 'mySecondApp',
+            blueprints: [],
             packageName: 'com.mycompany.myapp',
             packageFolder: 'com/mycompany/myapp',
             authenticationType: 'jwt',
@@ -771,6 +777,7 @@ describe('JDLImporter', () => {
           entities: ['F'],
           'generator-jhipster': {
             baseName: 'myThirdApp',
+            blueprints: [],
             packageName: 'com.mycompany.myapp',
             packageFolder: 'com/mycompany/myapp',
             authenticationType: 'jwt',
@@ -1039,6 +1046,7 @@ describe('JDLImporter', () => {
           entities: [],
           'generator-jhipster': {
             baseName: 'tata',
+            blueprints: [],
             packageName: 'com.mathieu.tata',
             packageFolder: 'com/mathieu/tata',
             authenticationType: 'jwt',
@@ -1074,6 +1082,7 @@ describe('JDLImporter', () => {
           entities: [],
           'generator-jhipster': {
             baseName: 'titi',
+            blueprints: [],
             packageName: 'com.mathieu.titi',
             packageFolder: 'com/mathieu/titi',
             authenticationType: 'jwt',
@@ -1109,6 +1118,7 @@ describe('JDLImporter', () => {
           entities: [],
           'generator-jhipster': {
             baseName: 'toto',
+            blueprints: [],
             packageName: 'com.mathieu.toto',
             packageFolder: 'com/mathieu/toto',
             authenticationType: 'jwt',
@@ -1139,6 +1149,7 @@ describe('JDLImporter', () => {
           entities: [],
           'generator-jhipster': {
             baseName: 'tutu',
+            blueprints: [],
             packageName: 'com.mathieu.tutu',
             packageFolder: 'com/mathieu/tutu',
             authenticationType: 'jwt',
@@ -1300,6 +1311,7 @@ describe('JDLImporter', () => {
       const expectedContents = [
         {
           'generator-jhipster': {
+            blueprints: [],
             databaseType: 'sql',
             devDatabaseType: 'h2Disk',
             enableHibernateCache: true,
@@ -1344,6 +1356,7 @@ describe('JDLImporter', () => {
         },
         {
           'generator-jhipster': {
+            blueprints: [],
             databaseType: 'sql',
             devDatabaseType: 'h2Disk',
             enableHibernateCache: true,
@@ -1374,6 +1387,7 @@ describe('JDLImporter', () => {
         },
         {
           'generator-jhipster': {
+            blueprints: [],
             databaseType: 'sql',
             devDatabaseType: 'h2Disk',
             enableHibernateCache: true,
@@ -1405,6 +1419,7 @@ describe('JDLImporter', () => {
         {
           'generator-jhipster': {
             databaseType: 'mongodb',
+            blueprints: [],
             devDatabaseType: 'mongodb',
             enableHibernateCache: false,
             enableSwaggerCodegen: false,

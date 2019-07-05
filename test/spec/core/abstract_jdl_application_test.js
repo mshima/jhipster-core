@@ -35,8 +35,10 @@ describe('AbstractJDLApplication', () => {
       it('uses default values', () => {
         expect(jdlApplicationConfig.languages.has('en') && jdlApplicationConfig.languages.has('fr')).to.be.true;
         expect(jdlApplicationConfig.testFrameworks).not.to.be.undefined;
+        expect(jdlApplicationConfig.blueprints).not.to.be.undefined;
         delete jdlApplicationConfig.languages;
         delete jdlApplicationConfig.testFrameworks;
+        delete jdlApplicationConfig.blueprints;
 
         expect(jdlApplicationConfig).to.deep.equal({
           baseName: 'jhipster',
@@ -172,6 +174,7 @@ describe('AbstractJDLApplication', () => {
       it('stringifies the application object', () => {
         expect(jdlApplication.toString()).to.eq(`application {
   config {
+    blueprints []
     databaseType sql
     devDatabaseType h2Disk
     enableHibernateCache true
@@ -210,6 +213,7 @@ describe('AbstractJDLApplication', () => {
         expect(jdlApplication.toString()).to.equal(
           `application {
   config {
+    blueprints []
     databaseType sql
     devDatabaseType h2Disk
     enableHibernateCache true

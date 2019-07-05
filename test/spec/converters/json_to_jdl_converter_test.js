@@ -42,6 +42,7 @@ describe('JSONToJDLConverter', () => {
         it('writes a JDL file with the application', () => {
           expect(jdlFileContent).to.equal(`application {
   config {
+    blueprints []
     databaseType sql
     devDatabaseType h2Disk
     enableHibernateCache true
@@ -93,6 +94,7 @@ describe('JSONToJDLConverter', () => {
         it('exports apps & entities', () => {
           expect(jdlFileContent).to.equal(`application {
   config {
+    blueprints []
     databaseType sql
     devDatabaseType h2Disk
     enableHibernateCache true
@@ -224,6 +226,7 @@ noFluentMethod Country, Department, Employee, Job, JobHistory, Location, Region,
         it('exports each app', () => {
           expect(jdlFileContent).to.equal(`application {
   config {
+    blueprints []
     databaseType sql
     devDatabaseType h2Disk
     enableHibernateCache true
@@ -261,6 +264,7 @@ noFluentMethod Country, Department, Employee, Job, JobHistory, Location, Region,
 }
 application {
   config {
+    blueprints []
     databaseType sql
     devDatabaseType h2Disk
     enableHibernateCache true
@@ -298,6 +302,7 @@ application {
 }
 application {
   config {
+    blueprints []
     databaseType sql
     devDatabaseType h2Disk
     enableHibernateCache true

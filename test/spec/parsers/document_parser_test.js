@@ -652,8 +652,10 @@ describe('DocumentParser', () => {
         it('parses it', () => {
           expect(application.languages.has('en') && application.languages.has('fr')).to.be.true;
           expect(application.testFrameworks.size).to.equal(0);
+          expect(application.blueprints.size).to.equal(0);
           delete application.languages;
           delete application.testFrameworks;
+          delete application.blueprints;
 
           expect(application).to.deep.equal({
             applicationType: 'monolith',
