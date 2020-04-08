@@ -1865,5 +1865,37 @@ paginate * with infinite-scroll
         expect(fse.existsSync('.jhipster')).to.be.false;
       });
     });
+
+    context('when importing with option with unquoted .', () => {
+      it('should throw', () => {
+        expect(() =>
+          createImporterFromContent(
+            `application {
+    config {
+        applicationType monolith
+        jwtSecretKey 1.0.0
+    }
+}`,
+            { skipYoRcGeneration: true }
+          )
+        ).to.throw(/NoViableAltException: Expecting: one of these possible Token sequences/);
+      });
+    });
+
+    context('when importing with option with unquoted $', () => {
+      it('should throw', () => {
+        expect(() =>
+          createImporterFromContent(
+            `application {
+    config {
+        applicationType monolith
+        jwtSecretKey ba$eName
+    }
+}`,
+            { skipYoRcGeneration: true }
+          )
+        ).to.throw(/unexpected character: ->\$<-/);
+      });
+    });
   });
 });
