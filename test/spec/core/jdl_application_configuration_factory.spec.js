@@ -17,13 +17,21 @@
  * limitations under the License.
  */
 
-const { expect } = require('chai');
+/* eslint-disable no-unused-expressions */
+const sinon = require('sinon');
+const chai = require('chai');
+const sinonChai = require('sinon-chai');
+
+chai.use(sinonChai);
+const { expect } = chai;
+
 const JDLApplicationConfiguration = require('../../../lib/core/jdl_application_configuration');
 const StringJDLApplicationConfigurationOption = require('../../../lib/core/string_jdl_application_configuration_option');
 const IntegerJDLApplicationConfigurationOption = require('../../../lib/core/integer_jdl_application_configuration_option');
 const BooleanJDLApplicationConfigurationOption = require('../../../lib/core/boolean_jdl_application_configuration_option');
 const ListJDLApplicationConfigurationOption = require('../../../lib/core/list_jdl_application_configuration_option');
 const { OptionNames } = require('../../../lib/core/jhipster/application_options');
+const logger = require('../../../lib/utils/objects/logger');
 
 const { createApplicationConfigurationFromObject } = require('../../../lib/core/jdl_application_configuration_factory');
 
@@ -109,6 +117,39 @@ describe('JDLApplicationConfigurationFactory', () => {
 
         it('should create it', () => {
           expect(createdConfiguration).to.deep.equal(expectedConfiguration);
+        });
+      });
+      context('containing an unknown configuration', () => {
+        context('without options', () => {
+          let loggerDebug;
+          let config;
+          before(() => {
+            loggerDebug = sinon.spy(logger, 'debug');
+            config = createApplicationConfigurationFromObject({ toto: 42 });
+          });
+          after(() => {
+            loggerDebug.restore();
+          });
+          it('should send a debug message', () => {
+            expect(loggerDebug).to.have.been.calledOnce;
+            expect(loggerDebug.getCall(0).args[0]).to.equal(
+              'Unrecognized application option name and value: toto and 42'
+            );
+          });
+          it('should not add the generic field', () => {
+            expect(config.options.toto).to.be.an('undefined');
+          });
+        });
+
+        context('with exportGenericConfigs option', () => {
+          let config;
+          before(() => {
+            config = createApplicationConfigurationFromObject({ toto: 42 }, { exportGenericConfigs: true });
+          });
+          it('it should add the generic field', () => {
+            expect(config.options.toto).to.be.an('object');
+            expect(config.options.toto.name).to.equal('toto');
+          });
         });
       });
     });
