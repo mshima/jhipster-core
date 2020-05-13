@@ -1,14 +1,15 @@
-# Unreleased
+# Latest v7.3.0
 
 ## What's new
   - JDL:
     - Support for quoted string values. It should be the new norm in v8, and unquoted string values removed in the next
       major version. 
     - The `blueprints` keyword is now available, it expects a list of blueprint names.
+    - Commas are optional for enums (it was the case for fields, relationships, etc. before).
 
 ---
 
-# Latest: v7.2.1
+# v7.2.1
 
 ## Bug fix:
   - Fixed bug when parsing a JDL content with no entity     
