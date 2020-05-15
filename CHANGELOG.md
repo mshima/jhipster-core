@@ -1,3 +1,10 @@
+# Unreleased
+
+## Bug fixes:
+  - Set the default values for the `serviceDiscoveryType` option to `eureka`.
+
+---
+
 # Latest v7.3.0
 
 ## What's new
@@ -11,7 +18,7 @@
 
 # v7.2.1
 
-## Bug fix:
+## Bug fixes:
   - Fixed bug when parsing a JDL content with no entity     
     - The failing cases happened when parsing applications without entities, and it failed because we wanted to export no entities.
 
