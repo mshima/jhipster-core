@@ -2,6 +2,7 @@
 
 ## Bug fixes:
   - Set the default values for the `serviceDiscoveryType` option to `eureka`.
+  - Options having `*` or `all` as entity list are now correctly parsed.
 
 ---
 
