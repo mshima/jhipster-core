@@ -1,4 +1,4 @@
-# Unreleased
+# Latest: v7.3.1
 
 ## Bug fixes:
   - Set the default values for the `serviceDiscoveryType` option to `eureka`.
@@ -6,7 +6,7 @@
 
 ---
 
-# Latest v7.3.0
+# v7.3.0
 
 ## What's new
   - JDL:
