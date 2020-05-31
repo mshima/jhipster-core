@@ -1,4 +1,14 @@
-# Latest: v7.3.1
+# Latest: v7.3.2
+
+## What's new:
+  -  Added the generator-jhipster- prefix to blueprints that don't have one
+
+## Bug fixes:
+  - Enforced the `authenticationType` is always `uaa` when the `applicationType` is `uaa`
+
+---
+
+# v7.3.1
 
 ## Bug fixes:
   - Set the default values for the `serviceDiscoveryType` option to `eureka`.
