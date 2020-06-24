@@ -145,6 +145,41 @@ MAX = 43`);
           });
         });
       });
+      context('when adding annotations', () => {
+        let application;
+
+        before(() => {
+          const content = parseFromContent(`application {
+  @customAnnotation
+  @customAnnotationValue(value1)
+  @customAnnotationString("foo bar")
+  @customAnnotationInt(1)
+  @customAnnotationDecimal(1.1)
+  config {
+    baseName toto
+  }
+}`);
+          application = content.applications[0];
+        });
+
+        it('should parse it', () => {
+          expect(application).to.deep.equal({
+            config: {
+              customAnnotation: true,
+              customAnnotationValue: 'value1',
+              customAnnotationString: 'foo bar',
+              customAnnotationInt: 1,
+              customAnnotationDecimal: 1.1,
+              baseName: 'toto'
+            },
+            entities: {
+              entityList: [],
+              excluded: []
+            },
+            options: {}
+          });
+        });
+      });
       context('when setting the blueprints', () => {
         let application;
 
